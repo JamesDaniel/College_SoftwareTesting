@@ -125,4 +125,23 @@ class Loan {
     private void setPeriod(int periodInYears) {
         numberOfPayments = periodInYears * MONTHS_IN_YEAR;
     }
+    //Returns the total payment plus cost
+    public double getTotalPaymentAndCost(LoanFees loanFees ) {
+        double totalPayment;
+        double cost;
+        cost = loanFees.getCost(loanAmount);
+        totalPayment = (getMonthlyPayment( ) * numberOfPayments) + cost;
+        return totalPayment;
+    }
+    //Returns the name of the customer
+    
+    public String GetOwner( Customer Cust) {
+        
+        String name= Cust.getName();
+        
+        return name;
+        
+    }
+
+
 }
