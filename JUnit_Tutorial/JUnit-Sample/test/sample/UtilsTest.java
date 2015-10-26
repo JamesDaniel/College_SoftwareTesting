@@ -11,6 +11,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Ignore;
 
 /**
  *
@@ -64,18 +65,16 @@ public class UtilsTest {
     /**
      * Test of normalizeWord method, of class Utils.
      */
+    @Ignore
     @Test
-    public void testNormalizeWord() {
-        System.out.println("normalizeWord");
-        String word = "";
-        String expResult = "";
-        String result = Utils.normalizeWord(word);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+    public void temporarilyDisabledTest() throws Exception {
+        System.out.println("* UtilsTest: test method 4 - checkExpectedException()");
+        assertEquals("Malm\u00f6", Utils.normalizeWord("Malmo\u0308"));
     }
-    @Test(expected=IllegalArgumentException.class)
+
+    @Test(expected = IllegalArgumentException.class)
     public void checkExpectedException() {
+        System.out.println("* UtilsTest: test method 3 - checkExpectedException()");
         final int factorialOf = -5;
         System.out.println(factorialOf + "! = " + Utils.computeFactorial(factorialOf));
     }
